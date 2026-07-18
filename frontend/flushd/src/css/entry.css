@@ -1,0 +1,52 @@
+* {
+    cursor: url('/plunger.png') 16 16, auto;
+}
+
+
+
+#entry-header {
+    background-color: #9ef7f7dd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 70px;
+    padding-bottom: 150px;
+
+    min-height: 500px;
+
+    --mask:
+    radial-gradient(80.04px at 50% calc(100% - 112.5px),#000 99%,#0000 101%) calc(50% - 100px) 0/200px 100%,
+    radial-gradient(80.04px at 50% calc(100% + 62.5px),#0000 99%,#000 101%) 50% calc(100% - 50px)/200px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#toilet_pic {
+    width: 80px;
+    height: auto;
+}
+
+.buttons-container{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+button {
+    cursor: url('/plungercursor.png') 16 16, auto;
+}
+
+button:hover{
+    color: white;
+    background-color: goldenrod;
+    cursor: url('/plungercursor.png') 16 16, auto;
+
+}
+

@@ -1,0 +1,74 @@
+.search{
+    
+    background-color: #9ef7f7dd;
+    width: 300px;
+    height: 100px;
+    aspect-ratio: 1;
+    clip-path: shape(from 11.68% 29.10%,curve to 18.64% 20.44% with 16.84% 25.91%,smooth to 24.65% 11.10%,smooth to 35.36% 10.21%,smooth to 46.44% 10.74%,smooth to 56.49% 7.16%,smooth to 67.96% 6.47%,smooth to 74.75% 14.72%,smooth to 83.49% 22.69%,smooth to 91.35% 29.17%,smooth to 88.57% 41.00%,smooth to 87.11% 51.06%,smooth to 87.93% 60.44%,smooth to 86.67% 70.65%,smooth to 82.23% 79.98%,smooth to 73.01% 84.55%,smooth to 63.28% 88.33%,smooth to 54.01% 94.72%,smooth to 43.45% 95.89%,smooth to 34.19% 89.62%,smooth to 27.33% 81.49%,smooth to 22.39% 73.48%,smooth to 14.19% 67.08%,smooth to 4.31% 59.79%,smooth to 5.72% 49.53%,smooth to 8.65% 38.29%,smooth to 11.68% 29.10%);
+    font-family:quintal;
+    font-size: 25pt;
+    margin-bottom: 5%;
+    
+}
+
+.searchTxt{
+    font-size: 60pt;
+    font-family:quintal;
+    line-height: 0.80;
+    color: goldenrod;
+    text-shadow: 10px 10px #9ef7f7dd;
+
+}
+
+.containerDiv{
+    display: block;
+    margin: auto;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+}
+
+#intro{
+    display: block;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    
+    
+}
+
+#br-list-container{
+    display: block;
+    margin: auto;
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    width: 600px;
+
+}
+
+#map-container{
+    margin-bottom: 30px;
+}
+
+.bathroom-card ul {
+   
+    margin-bottom: 20px;
+}
+
+.li-color {
+    color: black;
+}
+
+.h2-color{
+    color: goldenrod;
+}
+
+.h2-color:hover{
+    color: rgb(149, 113, 25);
+}
