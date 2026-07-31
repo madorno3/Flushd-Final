@@ -1,15 +1,17 @@
 # Environment variables
 .env
-backend/.env
 
 # Python
+venv/
 __pycache__/
 *.pyc
-venv/
-backend/venv/
 
 # Node
 node_modules/
 
-# Mac
+# Build files
+dist/
+build/
+
+# OS files
 .DS_Store
