@@ -33,7 +33,7 @@
 
 
 
-.subheading{
+.content-container {
     display: block;
     margin: auto;
     
@@ -42,9 +42,11 @@
     text-align: center; 
 }
 
-h2{
+#h2-headline{
     font-family:Louis George Cafe;
     font-size: 30pt;
+    color:goldenrod;
+    margin-left: 70px;
 }
 
 .line{
@@ -67,7 +69,7 @@ h2{
     display: block;
     padding-left: 200px;
     padding-right: 200px;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     justify-content: center;
     align-items: center;
     text-align: center; 
@@ -90,7 +92,7 @@ h2{
     display: block;
     width: 100%;
     max-width: 1200px;
-    margin: auto;
+    margin: -110px auto 0;
 
 }
 

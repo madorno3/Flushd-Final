@@ -1,3 +1,10 @@
+/* * {
+  cursor: url('/plunger.png') 16 16, auto;
+} */
+
+* {cursor: url("/plungercursor.png") 16 16, auto;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +18,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 a {
@@ -43,7 +51,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: border-color 0.25s;
 }
 button:hover {
@@ -68,3 +76,6 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+  

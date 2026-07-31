@@ -29,7 +29,7 @@ function Login({loginData,setLoginData,currentUser,setCurrentUser}){
             setCurrentUser(response.data.user);
             console.log(`CURRENT USER IS: ${currentUser}`)
             localStorage.setItem("access_token", response.data.access_token);
-            alert("Login successful");
+            
 
         } catch (error){
             console.error(error)
@@ -38,7 +38,6 @@ function Login({loginData,setLoginData,currentUser,setCurrentUser}){
         navigate("/home");
         
     }
-
 
     return(
         <div className="signupPage">

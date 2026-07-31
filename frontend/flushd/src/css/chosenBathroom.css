@@ -27,7 +27,7 @@
 .containerDiv{
     display: block;
     margin: auto;
-    
+    margin-bottom: 100px;
     justify-content: center;
     align-items: center;
     text-align: center; 
@@ -71,6 +71,12 @@
 
 .h2-color{
     color: goldenrod;
+    font-size: 30pt;
+}
+
+.h2-sub{
+    color: goldenrod;
+    font-size: 20pt;
 }
 
 
@@ -104,4 +110,30 @@
 
 .username{
     color: rgb(153, 114, 17);
+}
+
+#comment-form{
+    padding-top: 50px;
+    
+}
+
+.comment-inputs{
+    border: 3px solid goldenrod;
+    border-radius: 10px;
+    margin-right: 10px;
+    height: 30px;
+}
+
+#postReview-btn{
+    margin-top: 20px;
+}
+
+.directionsDiv ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.directionsDiv li {
+    padding-left: 5px;
 }

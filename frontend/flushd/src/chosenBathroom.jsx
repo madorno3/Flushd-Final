@@ -127,7 +127,7 @@ function ChosenBathroom({ closestData, currentLocation }) {
 
       setFormData({
         review: "",
-        rating: ""
+        rating: "1"
       });
   
       setShowForm(false);
@@ -241,7 +241,7 @@ function ChosenBathroom({ closestData, currentLocation }) {
             <div className="details-container">
             {reviews.length > 0 && (
               <div id="bathroom_reviews_div">
-                <h2>Reviews</h2>
+                <h2 className="h2-sub">Reviews</h2>
 
                 {reviews.map((review) => (
                   <div key={review.review_id}>
@@ -262,7 +262,7 @@ function ChosenBathroom({ closestData, currentLocation }) {
 
             {showDirections && (
               <div className="directionsDiv">
-                <h2>Directions</h2>
+                <h2 className="h2-sub">Directions</h2>
 
                 {routeData?.routes?.[0]?.legs?.[0]?.steps && (
                   <ol>
@@ -287,19 +287,23 @@ function ChosenBathroom({ closestData, currentLocation }) {
                 postReview();
               }}
             >
-              <label htmlFor="review">Leave a review</label>
+              
     
               <input
+                placeholder=" comment here"
+                className="comment-inputs"
                 name="review"
                 value={formData.review}
                 onChange={handleChange}
               />
     
               <select
+                className="comment-inputs"
                 name="rating"
                 value={formData.rating}
                 onChange={handleChange}
               >
+                <option value="">Select rating</option>
                 <option value="1">1 toilet 🚽</option>
                 <option value="2">2 toilets 🚽🚽</option>
                 <option value="3">3 toilets 🚽🚽🚽</option>
@@ -310,12 +314,14 @@ function ChosenBathroom({ closestData, currentLocation }) {
               <button type="submit">Submit</button>
             </form>
     
-            <button
-              id="postReview-btn"
-              onClick={() => setShowForm(!showForm)}
-            >
-              Post Review
-            </button>
+            {!showForm && (
+              <button
+                id="postReview-btn"
+                onClick={() => setShowForm(true)}
+              >
+                Post Review
+              </button>
+            )}
           </>
         )}
       </div>

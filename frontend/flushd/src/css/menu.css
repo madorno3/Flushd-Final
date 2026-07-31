@@ -1,9 +1,27 @@
-.logout-btn{
-    color: goldenrod;
-    text-decoration: none;
+.logout-button {
+    background: none;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    font: inherit;
+    color: #9ef7f7dd;
+    
 }
 
-.logout-btn:hover{
-    color: goldenrod;
-    text-decoration: none;
+.logout-button:hover{
+    color: #9ef7f7dd;
+    background-color: rgb(255 255 255 / 10%);
 }
+
+.menu-text{
+    color: #9ef7f7dd;
+}
+
+.menu-text:hover{
+    color: #9ef7f7dd;  
+}
+

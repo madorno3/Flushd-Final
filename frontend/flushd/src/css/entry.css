@@ -1,6 +1,6 @@
-* {
-    cursor: url('/plunger.png') 16 16, auto;
-}
+/* * {
+    cursor: url('/plungercursor.png'), auto;
+} */
 
 
 
@@ -39,14 +39,14 @@
     margin-top: 20px;
 }
 
-button {
+/* button {
     cursor: url('/plungercursor.png') 16 16, auto;
-}
+} */
 
 button:hover{
     color: white;
     background-color: goldenrod;
-    cursor: url('/plungercursor.png') 16 16, auto;
+    /* cursor: url('/plungercursor.png') 16 16, auto; */
 
 }
 

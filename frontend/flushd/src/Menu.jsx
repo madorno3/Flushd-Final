@@ -23,8 +23,7 @@ export default function DropMenu() {
   };
 
   const itemClass =
-    "group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 text-[#9ef7f7dd] hover:bg-white/10"
-
+  "group flex w-full items-center gap-2 rounded-lg px-3 py-1.5 text-[#9ef7f7dd] hover:bg-white/10"
   const iconClass = "size-4 text-[#9ef7f7dd]"
 
   return (
@@ -36,16 +35,23 @@ export default function DropMenu() {
         </MenuButton>
 
         <MenuItems className="w-52 rounded-xl bg-[goldenrod] p-1 text-[#9ef7f7dd]">
+
+          <MenuItem>
+            <Link to="/home" className={`${itemClass} menu-text`}>
+              <HomeIcon className={iconClass} />
+              Home
+            </Link>
+          </MenuItem>
           
           <MenuItem>
-            <Link to="/edit-profile" className={itemClass}>
+            <Link to="/edit-profile" className={`${itemClass} menu-text`}>
               <PencilIcon className={iconClass} />
               Edit Profile
             </Link>
           </MenuItem>
 
           <MenuItem>
-            <Link to="/bathrooms" className={itemClass}>
+            <Link to="/bathrooms" className={`${itemClass} menu-text`}>
               <Square2StackIcon className={iconClass} />
               Search
             </Link>
@@ -54,18 +60,16 @@ export default function DropMenu() {
           <div className="my-1 h-px bg-white/10" />
 
           <MenuItem>
-            <button onClick={logout} className={itemClass}>
-              <ArchiveBoxXMarkIcon className={iconClass} />
-              Logout
-            </button>
+            <button
+    onClick={logout}
+    className={`${itemClass} logout-button`}
+  >
+    <ArchiveBoxXMarkIcon className={iconClass} />
+    Logout
+  </button>
           </MenuItem>
 
-          <MenuItem>
-            <Link to="/home" className={itemClass}>
-              <HomeIcon className={iconClass} />
-              Home
-            </Link>
-          </MenuItem>
+          
 
         </MenuItems>
       </Menu>

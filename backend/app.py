@@ -17,7 +17,12 @@ GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///capstone2_db'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+    "DATABASE_URL",
+    "postgresql:///capstone2_db"
+)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///capstone2_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 SECRET = "this-is-a-super-long-secret-key-1234567890"
@@ -141,8 +146,6 @@ def update_user(user_id):
 @jwt_required()
 def get_bathrooms():
 
-    # jwt_id = int(get_jwt_identity())
-
     res = requests.get("https://data.cityofnewyork.us/resource/i7jb-7jku.json")
 
     if res.status_code == 200:
@@ -211,8 +214,6 @@ def get_bathrooms():
 @jwt_required()
 def closest_restrooms():
 
-    # jwt_id = int(get_jwt_identity())
-
     print("AUTH HEADER:", request.headers.get("Authorization"))
     print("ALL HEADERS:", dict(request.headers))
     data = request.get_json() 
@@ -254,7 +255,6 @@ def closest_restrooms():
 @jwt_required()
 def compute_route():
 
-    # jwt_id = int(get_jwt_identity())
 
     data = request.json
 
@@ -306,18 +306,18 @@ def make_review(restroom_id):
 
     data = request.json
     review = data["review"]
-    rating = data["rating"]
+    rating=data.get("rating") or None
     user_id=int(get_jwt_identity())
     new_review = Reviews(user_id=user_id,restroom_id=restroom_id,review=review,rating=rating)
     db.session.add(new_review)
     db.session.commit()
-    print("comment sucessfully posted!")
+    
     return {
     "review_id": new_review.review_id,
     "review": new_review.review,
     "rating": new_review.rating,
     "user_id": new_review.user_id
-    }
+}
 
 @app.route('/bathrooms/reviews/<int:review_id>', methods=['DELETE'])
 @jwt_required()
@@ -371,11 +371,8 @@ def get_review(restroom_id):
 }
 
 
-
-
 if __name__ == "__main__":
     with app.app_context():
         app.run(debug=True)
-# if __name__ == '__main__':
-#     app.run(debug=True)
+
 

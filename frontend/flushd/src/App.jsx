@@ -115,7 +115,7 @@ function App() {
                     closestData={closestData}
                     currentLocation={currentLocation}
                   />
-                  <Logout loginData={loginData} setLoginData={setLoginData} />
+                  
                 </>
               }
             />
