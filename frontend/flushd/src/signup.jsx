@@ -5,6 +5,8 @@ import "./css/signup.css"
 
 function Signup({registerData,setRegisterData}){
 
+    const navigate = useNavigate();
+
     const handleChange = (e) => {
         const {name, value} = e.target;
         // save register data from inputs
@@ -22,6 +24,7 @@ function Signup({registerData,setRegisterData}){
             registerData
         );
         console.log(response.data);
+        navigate("/login");
     }
 
 

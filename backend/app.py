@@ -91,7 +91,6 @@ def login():
 @jwt_required()
 def get_me():
 
-    print("ME ROUTE HIT")
     user_id = int(get_jwt_identity())
     print("USER ID:", user_id)
 
@@ -214,7 +213,7 @@ def get_bathrooms():
 @jwt_required()
 def closest_restrooms():
 
-    print("AUTH HEADER:", request.headers.get("Authorization"))
+    
     print("ALL HEADERS:", dict(request.headers))
     data = request.get_json() 
     print("DATA:", data)
@@ -222,7 +221,6 @@ def closest_restrooms():
    
     latitude = data.get("latitude", "Unknown")
     longitude = data.get("longitude", "Unknown")
-    print(f"AWOOOOOOOO {latitude}, {longitude}")
     point = f"SRID=4326;POINT({longitude} {latitude})"
     results = db.session.execute(text("""
     SELECT restroom_id, restroom_name, latitude, longitude, hours_of_operation, status,
@@ -246,8 +244,6 @@ def closest_restrooms():
             row_dict["address"] = convert_address(lat, lng)
         # append the address to the response to send it to the front end
         response.append(row_dict)
-        print(f"HWAAAATTTTTTT",response)
-
 
     return jsonify(response)
     
@@ -293,6 +289,7 @@ def compute_route():
     if travel_mode == "TRANSIT":
         body["departureTime"] = datetime.now(timezone.utc).isoformat()
 
+    print("GOOGLE KEY:", GOOGLE_API_KEY[:8])
     res = requests.post("https://routes.googleapis.com/directions/v2:computeRoutes", headers=headers, json=body)
     print(res)
 
